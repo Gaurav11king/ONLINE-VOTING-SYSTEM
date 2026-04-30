@@ -1,0 +1,18 @@
+<
+
+<!DOCTYPE html>
+<html><head><title>Cast Vote</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="form-container">
+    <h2>🗳️ Cast Your Vote</h2>
+    <p>Select ONE party only</p>
+    <form method="POST" action="/cast-vote">
+        <input type="hidden" name="voterId" value="<%= voterId %>">
+        <% parties.forEach(party => { %>
+            <button type="submit" name="partyName" value="<%= party.name %>" class="party-btn">
+                <%= party.symbol %> <%= party.name %>
+            </button>
+        <% }) %>
+    </form>
+</div>
+</body></html>

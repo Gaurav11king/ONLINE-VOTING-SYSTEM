@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Register - Step 1</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="form-container">
+    <h2>📋 Step 1: Document Verification</h2>
+    <% if (typeof error !== 'undefined') { %>
+        <div class="error"><%= error %></div>
+    <% } %>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="text" name="voterId" placeholder="Voter ID (e.g., V001)" required>
+        <input type="text" name="aadhaar" placeholder="Aadhaar Number (1234 5678 9012)" required>
+        <input type="text" name="name" placeholder="Full Name" required>
+        <hr>
+        <label>📱 Aadhaar Card (Photo)</label>
+        <input type="file" name="aadhaar" accept="image/*" required>
+        <label>🪪 Voter ID Card (Photo)</label>
+        <input type="file" name="voterCard" accept="image/*" required>
+        <button type="submit">✅ Verify Documents →</button>
+    </form>
+    <a href="/" class="back-btn">← Home</a>
+</div>
+</body>
+</html>
+
+
+
